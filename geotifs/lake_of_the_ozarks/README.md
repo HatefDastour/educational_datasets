@@ -334,38 +334,6 @@ If you use these datasets in your research or educational materials, please cite
 **Landsat 9:**
 > U.S. Geological Survey, 2023, Landsat 9 Level-2, Collection 2, Tier 1: U.S. Geological Survey data release, https://doi.org/10.5066/P9OGBGM6
 
-## Suggestions and Best Practices
-
-### When to Use Each Dataset
-
-- **RGB Scaled (`landsat9_lake_ozarks_30m_rgb.tif`)**: 
-  - Quick visualization and display
-  - True-color image analysis
-  - Teaching basic remote sensing concepts
-  - Smaller file size for demos
-
-- **Unscaled Multispectral (`landsat9_lake_ozarks_30m_unscaled.tif`)**:
-  - Spectral index calculations (NDVI, NDWI, EVI, etc.)
-  - Custom band ratio analysis
-  - Machine learning feature engineering
-  - Advanced multispectral analysis
-  - Preserves full radiometric resolution
-
-- **SRTM DEM (`srtm_lake_ozarks_30m_composite.tif`)**:
-  - Terrain analysis (slope, aspect, hillshade)
-  - Watershed delineation
-  - Viewshed analysis
-  - 3D visualization
-  - Integration with multispectral data for topographic correction
-
-### Additional Analysis Ideas
-
-1. **Land Cover Classification**: Use unscaled data to train supervised classifiers
-2. **Water Body Extraction**: Apply NDWI thresholding to identify Lake of the Ozarks
-3. **Vegetation Monitoring**: Calculate NDVI to assess forest and agricultural areas
-4. **Topographic Analysis**: Combine DEM with optical data for slope-based stratification
-5. **Time Series Analysis**: Compare with other Landsat collections for change detection
-
 ## Contact
 
 For questions or issues related to these datasets, please open an issue in the main repository.
