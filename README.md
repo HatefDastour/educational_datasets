@@ -33,7 +33,7 @@ These datasets are designed to support:
 
 ## Data Sources
 
-Datasets are sourced from reputable public repositories including:
+Datasets are sourced from reputable public repositories, including:
 - NASA/USGS Earth observation missions
 - Google Earth Engine Data Catalog
 - Other open geospatial data platforms
@@ -59,17 +59,6 @@ Navigate to the specific dataset directory to access:
 ## Contributing
 
 This repository is maintained for educational purposes. For questions, suggestions, or issues, please open an issue or contact the repository maintainer.
-
-## Future Additions
-
-Planned dataset categories include:
-- Additional Missouri locations (Kansas City, St. Louis)
-- Multi-temporal datasets for change detection
-- Time series data
-- Point cloud datasets
-- Vector geospatial data
-- Labeled training datasets for supervised learning
-- Climate and environmental monitoring data
 
 ## License
 
