@@ -80,9 +80,4 @@ Map.addLayer(s2Comp, s2rgb, 'S2 True Color (10m)');
 Map.addLayer(s2Comp, riverVis, 'S2 River Index (Bow River)');
 Map.addLayer(l9Comp, s2rgb, 'Landsat 9 (30m)');
 Map.addLayer(srtm, {min: 1350, max: 1550, palette: ['#0066CC','#00AA66','#FFCC00']}, 'SRTM Elevation');
-
-// Print info
-print('Banff Town Area:', banffTown.area().divide(1e6), 'km² (~8km x 6km)');
-print('S2 scenes:', s2.size(), 'L9 scenes:', l9.size());
-print('Elevation:', srtm
 ```
