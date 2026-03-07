@@ -139,12 +139,12 @@ with rasterio.open('lunenburg_s2_summer2025.tif') as src:
     s2 = src.read()  # (7, H, W)
 
 coastal = s2[0]
-blue    = s2 [developers.google](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED)
-green   = s2 [earthdata.nasa](https://www.earthdata.nasa.gov/data/catalog/lpcloud-srtmgl1-003)
-red     = s2 [earthdata.nasa](https://www.earthdata.nasa.gov/data/instruments/sentinel-2-msi)
-nir     = s2 [usgs](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1)
-swir1   = s2 [en.wikipedia](https://en.wikipedia.org/wiki/Lunenburg,_Nova_Scotia)
-swir2   = s2 [en-ca.topographic-map](https://en-ca.topographic-map.com/place-l6c8zs/Lunenburg-County/)
+blue    = s2[1]
+green   = s2[2]
+red     = s2[3]
+nir     = s2[4]
+swir1   = s2[5]
+swir2   = s2[6]
 ```
 
 ### 2. True Color Composite

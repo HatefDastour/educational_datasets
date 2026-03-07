@@ -55,7 +55,7 @@ var landsat8 = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
     var optical = image.select('SR_B.*').multiply(0.0000275).add(-0.2);
     return image.addBands(optical, null, true)
       .updateMask(qaMask)
-      .updateMask(satMask;
+      .updateMask(satMask);
   });
 
 var composite = landsat8.median().clip(seaToSky);

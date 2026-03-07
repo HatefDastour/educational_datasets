@@ -16,9 +16,9 @@ The Area of Interest (AOI) covers the urban core of Albuquerque, the fertile Rio
 
 | File | Product | Resolution | Data Range | Purpose |
 | --- | --- | --- | --- | --- |
-| `abq_modis_ndvi_july2025.tif` | MOD13Q1 (NDVI) | 250 m | 0.0 to 1.0 | Vegetation health/vigor |
-| `abq_modis_lst_july2025.tif` | MOD11A2 (LST) | 1 km | Celsius (°C) | Surface temperature patterns |
-| `abq_srtm_elevation.tif` | SRTMGL1 (DEM) | 30 m | Meters (a.s.l.) | Topographic context |
+| `albuquerque_modis_ndvi_july2025.tif` | MOD13Q1 (NDVI) | 250 m | 0.0 to 1.0 | Vegetation health/vigor |
+| `albuquerque_modis_lst_day_july2025.tif` | MOD11A2 (LST) | 1 km | Celsius (°C) | Surface temperature patterns |
+| `albuquerque_srtm_elevation.tif` | SRTMGL1 (DEM) | 30 m | Meters (a.s.l.) | Topographic context |
 
 ### Technical Details
 

@@ -43,8 +43,57 @@ Utah Lake is a large, shallow freshwater lake in north-central Utah:
 ## Google Earth Engine Scripts
 
 ### Script 1: Landsat 9 Summer 2024
+
 ```javascript
-// [Existing Script 1 code remains unchanged - see original]
+// ============================================================
+// GOOGLE EARTH ENGINE SCRIPT 1: LANDSAT 9 SUMMER 2024
+// ============================================================
+
+var utahLake = ee.Geometry.Rectangle([
+  -111.95, 40.37,  // west, south
+  -111.64, 40.01   // east, north
+]);
+
+Map.centerObject(utahLake, 11);
+
+function maskLandsatSR(image) {
+  var qaMask = image.select('QA_PIXEL').bitwiseAnd(parseInt('11111', 2)).eq(0);
+  var saturationMask = image.select('QA_RADSAT').eq(0);
+  var opticalBands = image.select('SR_B.').multiply(0.0000275).add(-0.2);
+  var thermalBands = image.select('ST_B.*').multiply(0.00341802).add(149.0);
+  return image.addBands(opticalBands, null, true)
+      .addBands(thermalBands, null, true)
+      .updateMask(qaMask)
+      .updateMask(saturationMask);
+}
+
+var l9 = ee.ImageCollection('LANDSAT/LC09/C02/T1_L2')
+  .filterBounds(utahLake)
+  .filterDate('2024-06-01', '2024-08-31')
+  .filter(ee.Filter.lt('CLOUD_COVER', 20))
+  .map(maskLandsatSR)
+  .median()
+  .clip(utahLake);
+
+var rgbVis = {bands: ['SR_B4', 'SR_B3', 'SR_B2'], min: 0, max: 0.3};
+Map.addLayer(l9, rgbVis, 'L9 Summer 2024');
+
+var exportImg = l9.select(
+  ['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7', 'ST_B10'],
+  ['coastal', 'blue', 'green', 'red', 'nir', 'swir1', 'swir2', 'thermal']
+);
+
+Export.image.toDrive({
+  image: exportImg.toFloat(),
+  description: 'utah_lake_l9_summer_2024',
+  folder: 'earth_engine_exports',
+  fileNamePrefix: 'utah_lake_l9_summer_2024',
+  region: utahLake,
+  scale: 30,
+  crs: 'EPSG:4326',
+  maxPixels: 1e9,
+  fileFormat: 'GeoTIFF'
+});
 ```
 
 ### Script 2: Sentinel-2 Multi-Temporal (Apr-Oct 2024)
@@ -181,11 +230,11 @@ years.forEach(function(year) {
   );
   Export.image.toDrive({
     image: exportImg.toFloat(),
-    description: 'utah_lake_s2_2024_30m_' + monthStr,
+    description: 'utah_lake_landsat_summer_' + year,
     folder: 'earth_engine_exports',
-    fileNamePrefix: 'utah_lake_s2_2024_30m_' + monthStr,
+    fileNamePrefix: 'utah_lake_landsat_summer_' + year,
     region: utahLake,
-    scale: 30, // to reduce the image size
+    scale: 30,
     crs: 'EPSG:4326',
     maxPixels: 1e9,
     fileFormat: 'GeoTIFF'
