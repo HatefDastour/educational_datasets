@@ -31,14 +31,6 @@ Remote sensing and terrain datasets in GeoTIFF format, including:
 
 [**→ Browse GeoTIFF Datasets**](geotifs/)
 
-### 🔜 Coming Soon
-Additional dataset categories planned:
-- Vector geospatial data (shapefiles, GeoJSON)
-- Point cloud data (LiDAR)
-- Labeled training datasets for supervised learning
-- Climate and environmental monitoring data
-- Tabular datasets for statistical analysis
-
 ## 🎯 Key Features
 
 ### ✅ Comprehensive Documentation
@@ -211,6 +203,6 @@ This repository structure and documentation are provided under the MIT License. 
 
 ---
 
-**Last Updated**: March 2026  
+**Last Updated**: April 2026  
 **Repository Status**: Active Development  
 **Total Datasets**: 10 locations with 39 GeoTIFF files
