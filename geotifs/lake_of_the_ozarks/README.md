@@ -176,7 +176,7 @@ Map.addLayer(scaled_for_display, {bands: ['SR_B4', 'SR_B3', 'SR_B2'], min: 0, ma
 // 6. Export all 7 optical bands (unscaled DN values) to Drive
 Export.image.toDrive({
   image: comp_unscaled,
-  description: 'Landsat9_Lake_Ozarks_Unscaled',
+  description: 'landsat9_lake_ozarks_30m_unscaled',
   folder: 'GEE_exports',
   fileNamePrefix: 'landsat9_lake_ozarks_30m_unscaled',
   region: rect,
